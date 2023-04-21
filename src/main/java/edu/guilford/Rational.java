@@ -20,7 +20,26 @@ public class Rational {
         }
     }
 
-    //methods
+    //METHODS
+    public void invert() {
+        //swap numerator and denominator
+        int temp = numerator;
+        numerator = denominator;
+        denominator = temp;
+    }
+
+    //toDouble
+    public double toDouble() {
+        return (double) numerator / denominator;
+    }
+
+    //should have void return because it just maniupulates the private attributes,
+    //returning the numerator is not pertinent to the task
+    public void negate() {
+        numerator = -numerator;
+    }
+
+    //getters and setters
     public int getNumerator() {
         return numerator;
     }
