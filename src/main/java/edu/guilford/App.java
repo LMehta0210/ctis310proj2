@@ -28,7 +28,7 @@ public class App
         //test invert method
         System.out.println("\nTest invert method");
         System.out.println("Input 3/4, Expected output 4/3");
-        System.out.print("Inverted  q" + r2 + ": ");
+        System.out.print("Inverted " + r2 + ": ");
         r2.invert();
         System.out.println(r2);
         r2.invert();
