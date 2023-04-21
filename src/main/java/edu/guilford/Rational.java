@@ -1,14 +1,21 @@
 package edu.guilford;
 
+import java.util.Random;
+
 public class Rational {
     //attributes
     private int numerator;
     private int denominator;
+    private Random rand = new Random();
 
     //constructors
     public Rational() {
-        numerator = 0;
-        denominator = 1;
+        //randomly generate a numerator and denominator
+        numerator = rand.nextInt(201) + -100;
+        denominator = 0;
+        while (denominator == 0) {
+            denominator = rand.nextInt(201) + -100;
+        }
     }
 
     public Rational(int n, int d) {
@@ -37,6 +44,35 @@ public class Rational {
     //returning the numerator is not pertinent to the task
     public void negate() {
         numerator = -numerator;
+    }
+
+    //reduce method via Euclid's algorithm
+    //CHALLENGE
+    public void reduce() {
+        int A = numerator;
+        int B = denominator;
+        while (A != 0 && B != 0) {
+            int temp = B;
+            B = A%B;
+            A = temp;
+        }
+        //reduce the numerator and denominator by the GCD
+        numerator = numerator/A;
+        denominator = denominator/A;
+    }
+
+    //add method
+    public Rational add(Rational r) {
+        //multiply the denominators
+        int newDenominator = denominator * r.getDenominator();
+        //multiply the numerators by the other denominator
+        int newNumerator = numerator * r.getDenominator() + r.getNumerator() * denominator;
+        //create a new Rational object with the new numerator and denominator
+        Rational newRational = new Rational(newNumerator, newDenominator);
+        //reduce the new Rational object
+        newRational.reduce();
+        //return the new Rational object
+        return newRational;
     }
 
     //getters and setters
