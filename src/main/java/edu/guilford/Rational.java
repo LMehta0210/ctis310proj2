@@ -97,6 +97,7 @@ public class Rational {
         denominator = d;
     }
 
+    @Override
     public String toString() {
         return numerator + "/" + denominator;
     }
