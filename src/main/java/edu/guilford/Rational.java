@@ -56,9 +56,14 @@ public class Rational {
             B = A%B;
             A = temp;
         }
-        //reduce the numerator and denominator by the GCD
-        numerator = numerator/A;
-        denominator = denominator/A;
+        if (A == 0) {
+            System.out.println("Cannot reduce because numerator is 0");
+        }
+        else{
+            //reduce the numerator and denominator by the GCD
+            numerator = numerator/A;
+            denominator = denominator/A;
+        }
     }
 
     //add method
