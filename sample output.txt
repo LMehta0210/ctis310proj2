@@ -1,0 +1,24 @@
+Sample output:
+
+r1: 31/74
+r2: 3/4
+
+Test negate method
+Input 3/4, Expected output -3/4
+Negated 3/4: -3/4
+
+Test invert method
+Input 3/4, Expected output 4/3
+Inverted 3/4: 4/3
+
+Test toDouble method
+Input 3/4, Expected output .75
+Double 3/4: 0.75
+
+Test reduce method
+Input 12/18, Expected output 2/3
+Reduced 12/18: 2/3
+
+Test add method
+Input 3/4 and 2/3, Expected output 17/12
+3/4 + 2/3 = 17/12
